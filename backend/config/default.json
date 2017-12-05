@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "a29fa91a8b1b9fd85ecf7cada8a102332fe5e021c65c94a9ec3c146d6c40b4ac81795cbf5cf980522e106757dfc08905f8d9361b84e418c3b7f2412374f53d4e4ae7f9b69e21cda9878c7bdaa53d44473a618e1cc04221404863f30af77517fee635506b644bf1c9d215d2177c295b65acdd52fbe095c4cdfb360da550b01f59793c1636a1c651d7e736a919f5b76b0987b37ba4ad28e55a5ec2c07c8c041b7582f5674d3d283008e009a155c93e9322a75c712214a7c2f2994c9405dbb45947989dce048e5c5c34284236206f8deccb5e866d0de4a539faed2c1bb150fbce956ca242524fa3a11cca3b48d1a7d186369ea36f51da0b7dd97d49d83d96f4bc9a",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://admin:MyDatabasePassword@ds129926.mlab.com:29926/arcademan"
+}
